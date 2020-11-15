@@ -1,0 +1,1734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74328313-54DB-4109-A530-90B3ECDA271A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LimsP</RootNamespace>
+    <AssemblyName>LimsP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\LimsP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LIMS.ICO</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MathParser.org-mXparser, Version=4.4.2.0, Culture=neutral, PublicKeyToken=0fbab7add73ed6e2, processorArchitecture=MSIL">
+      <HintPath>packages\MathParser.org-mXparser.4.4.2\lib\net461\MathParser.org-mXparser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.6.0\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.6.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACCESS_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACCESS_FUNCTION_IDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACCESS_ROUTINES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADDRESS_BK_TMP_FLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADDRESS_BOOK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADDRESS_BOOK_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD_HOC_COMPONENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ALERT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS_APPROVAL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS_LIMITS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS_RULES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS_TYPES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANALYSIS_VARIATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL_DETAILS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL_ROLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL_ROUTING.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPROVAL_STEPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARCHIVE_DOC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARCHIVE_DOC_FILE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARCHIVE_DOC_TYPES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARRAY_TAG_PROPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUDIT_ESIG_EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUDIT_LOG_DATA.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUDIT_LOG_TRANSACTIONS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUTOMATION_SCRIPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BASIC_ERROR_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BASIC_SCHEDULER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_ACTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_ACTION_CALC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_ACTION_DEF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_CALCULATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_CALC_VAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_COMPONENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_COMP_CODES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_HDR_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_HDR_TMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_LINK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_PROTOCOL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_RESULT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_STANDARD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_STEPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BATCH_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BROWSE_TAG_PROPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CALCULATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CALC_TRIGGER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CALC_VARIABLES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CALENDAR_SCHEDULE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CALIB_HISTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANCELED_SAMPLE_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHARGES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHARGE_CODE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHART_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHART_GROUPS_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHART_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHKSUM_FAILURE_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_INSTANCE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CODE_SNIPPETS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON_NAME.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPONENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPONENT_CODES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPONENT_FACTORS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMP_VARIATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONDITION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACKAGE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_FILE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_FUNCTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_OBJECT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_POST_SUB.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_PRE_SUB.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_SQL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_TABLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_PACK_WINDOW.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_SYS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG_USER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT_TEMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT_TEMP_GRPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTAINER_TYPE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTCT_TMP_DSP_FLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUNTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE_EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_EXPLORER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_EXPLORER_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAYLIGHT_SAVINGS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_DIRECTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_FILES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_SCRIPTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DISPLAY_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DISP_REPORT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperties.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESIG_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPIRATION_HISTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CERTIF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CERTIF_INDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_CNF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_ITA.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_ITD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_ITP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_ITQ.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_ITR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_AD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_ATT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_CAL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_DTL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_SMPL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25CNTRL_PR_PAR_STAB.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25INSRT_PR_PAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25INSRT_PR_PAR_SMPL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25INS_ITC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25INS_ITD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25INS_ITR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25OPERCONTR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25PRJ_QIND.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25PROCESS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25PROD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25PRODQINDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25PRODQINDS_INDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25QINDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F25QINDS_INDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FACTORS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIELD_MASTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Files\ReadParametrs.cs" />
+    <Compile Include="Files\WriteToFile.cs" />
+    <Compile Include="FLAGS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLAG_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLAG_TEMPLATE_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLDR_ACTION_CALC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLDR_ACTION_DEF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLDR_TEMPLATE_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOLDER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOLDER_GROUP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOLDER_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOLDER_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMAT_CALCULATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULATION_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULA_ID_CNFG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULA_INGREDIENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULA_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULA_TMP_GRPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_EXP_INGRED.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_FLD_ATTRIBUTE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_TEMP_SECTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GROUP_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HAZARD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HISTOGRAM.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOLIDAY_SCHEDULE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOLIDAY_SCHED_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_FILES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICON_RULES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_CONFIGURATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INCREMENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INFO_RULES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INGREDIENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INGREDIENT_LOT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTRUMENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTRUMENT_APPROVAL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTRUMENT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTRUMENT_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTRUM_SI_ATT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INST_EVENT_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INST_EVNT_TMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INST_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_FILTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_ITEM.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_LOCATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_TMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_TRANS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVESTIGATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVESTIGATION_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVEST_TMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ENTRY_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ENTRY_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ENTRY_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ENTRY_TMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_FILTER_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_FLTER_DSPLY_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_GSO_METR_CHAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_TRANS_TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_TRANS_TMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_TRANS_TMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITEM_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITEM_TEMPLATE_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="K_IDEAL_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="K_PRESS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LABEL_LINE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LABEL_PRINTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LABSTATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAST_INST_DATA_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LDAP_SERVERS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LDAP_SERVER_MAPPING.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LICENSE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LICENSE_show.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LICENSE_WEB.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lims.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lims.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lims.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lims.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lims.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LIMS_CONSTANTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMS_HTML_NOTES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMS_MESSAGE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMS_NOTES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMS_USERS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIST.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIST_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOCATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN_SCHEDULER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_RESULT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_SAMPLING_POINT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_SOURCES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOT_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LS_JOBS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LS_SAMPLES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LS_TEMPLATES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MENUS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MENU_ROUTINE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NOTEBOOK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NOTEBOOK_REF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJECT_GROUP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJECT_GROUP_GRP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJECT_GROUP_OBJS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJ_GRP_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJ_GRP_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDERS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_FIELD_ATTRIB.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARSING_FORMULA.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARSING_SCRIPTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PASSWORD_HISTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON_LINKING.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIMS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIMS_ANALYZES_NAMES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIMS_ANALYZES_NAMES_REL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIMS_LIMS_PRODUCT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIMS_RESULT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLOT15.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLOT20.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PM_HISTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROCESS_SCHEDULE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROCESS_UNIT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcProtocol_Result.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SCHED_PARENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_FILTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_GRADE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_HISTORY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_SPEC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_FILTER_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_GRADE_STAGE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="PROJECT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_CALCULATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_CALC_VAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_COMPONENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_COMP_CODES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_FILTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_RESULT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJ_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJ_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJ_FILTER_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJ_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROMPT_TAG_PROPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROTOCOL_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROT_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROT_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSWD_FAILURE_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QC_SAMPLES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUERY_TAG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUERY_TAG_PROPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUEUE_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quiryng\Result.cs" />
+    <Compile Include="RECENT_TASKS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_EXP_INGRED.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_ID_CNFG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_INGREDIENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECIPE_TEMP_GRPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REGRESSION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT_SCHEDULER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT_WIZARD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RESULT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RESULT_SPEC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RUN_CHART.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_ACTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_DISP_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_DISP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_FILTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_FILTER_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_PLAN.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_PLAN_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_RULES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLE_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLING_POINT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMP_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCHEDULER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCHEDULE_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCHED_TYPE_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCHED_TYPE_TMP_FLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEARCH_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEARCH_TEMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEARCH_TEMP_GRPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEASON.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SELLER_INST.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVER_ACTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SNAPSHOT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STANDARD_REAGENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATUS_RULES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STD_ID_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STD_REAG_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STORED_QUERY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STYLE_LIST.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUBROUTINE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUPPLIER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_AUDIT_CURRENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_AUDIT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_AUDIT_OLD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_AUDIT_RPT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_DRILLDOWN.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_FORMAT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_LIST_DETAIL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_LIST_HEADER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_MASTER.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_TEMP_GROUPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPLATE_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_ACTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_DISP_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_DISP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_EVENTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_LIST.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_LIST_COMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_LIST_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_LOCATION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST_TEMP_FIELDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIMEPOINT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TOOLBAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEST_METHOD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEST_METHOD_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEST_METHOD_INV.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEST_METHOD_INV_E.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UNITS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitsP_Result.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Units\IUnit.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\UnitCalc.cs" />
+    <Compile Include="Units\UnitSimple.cs" />
+    <Compile Include="UNRESOLVED_TESTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_ANALYSIS_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_DIALOG_TEMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_DLG_MENUS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_DLG_TMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_DLG_TMP_GRPS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_INSTRUMENT_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_PROGRAMS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_ROLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VARIABLE_CHART.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VENDOR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VERSIONS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VISUAL_WORKFLOW.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WEB_FUNCTION.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WEB_SUBROUTINE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKFLOW_DETAIL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET_DATA.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET_ID_CNFG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET_OBJECTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET_TEMPLATE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKSHEET_TMP_FLDS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_ACCRED_DOCS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_ACCRED_DOCS_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_ANALYSIS_REAGENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_ATT_METHOD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_DAVNASPAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_DAV_NACL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_DEV.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_DUTY_TYPE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_FOREIGN_STAFF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_FORREPORTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GAZ_PLOT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GLK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GLK_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GR_SER_H.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GR_TABLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GSO.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_GSO_MET_CHAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_G_TABLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_ATT_DOC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_ATT_MET.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_CONDITIONS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_PM_PLAN.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_REG_CARD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_RESEARCH_OBJ.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_SI_TYPES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_SI_TYPE_DOC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_TECH_CHAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INSTR_TEST_TYPE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_ANALYS_PULL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_INFLOW.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_INFLOW_E.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_MOVE_REQ.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_MOVE_REQ_E.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_PULL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_INVENT_PULL_E.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_IQC_METROLOG_CHAR.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_KOD_OKP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_KOFF.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_KSM.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_KSM_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_LAB_INFO.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_LAB_INFO_DEP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_LAB_INFO_PROD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_LOGIN_USER_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_MAINTENANCE_PLAN.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_MENUS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_MENUS_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_MENUS_SUB_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_MM.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_PASSPORT_TEMPLATES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_pCNO3.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_PERIOD_QUALITY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_PERIOD_QUALITY_ANA.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_PRODUCT_PROC_UNIT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_PROD_CERTS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_ROOMS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_SEND_MAIL.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_SVNIINP_DOC.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_SVNIINP_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_TRAININGS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_T_TABLE.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_UNIT_RPT_ANALYSIS.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_UNIT_RPT_COMPONENT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_UNIT_RPT_INFO.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_UNIT_RPT_ROW.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_CONFIG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_EDU_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_FUNC_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_MEASURE_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_NOTES_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_RSRCHS_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_TESTS_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_USER_TRAIN_CHILD.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_VKK_ND.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_VKK_PROJ_COMP.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_VKK_REPORT.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_VLK.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_VLK_ENTRY.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_WEB_LIMS_LOG.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZIPCODES.cs">
+      <DependentUpon>lims.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="lims.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>lims.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EntityDeploy>
+    <None Include="lims.edmx.diagram">
+      <DependentUpon>lims.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lims.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>lims.Context.cs</LastGenOutput>
+      <DependentUpon>lims.edmx</DependentUpon>
+    </Content>
+    <Content Include="LIMS.ICO" />
+    <Content Include="lims.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>lims.edmx</DependentUpon>
+      <LastGenOutput>lims.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docs\Protocols\" />
+    <Folder Include="SQL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
