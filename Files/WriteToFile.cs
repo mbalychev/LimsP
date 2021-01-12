@@ -13,17 +13,6 @@ namespace LimsP.Files
     /// </summary>
     class WriteToFile
     {
-
-
-        //string path = @"D:\temp\Lims_" + year + monthStr + dayStr + "_3.txt";
-        //static string pathCopy = @"D:\temp\Lims_" + yesterDay.Year + monthStr + dayStr + "_3.txt";
-        //static string pathError = @"Lims_Error" + DateTime.Today.Year + DateTime.Today.Month + DateTime.Today.Day + "_3.txt";
-        //static string path = @"\\kms-dfs01\s\MatBalans\Lims_" + yesterDay.Year + monthStr + dayStr + "_3.txt";
-        //static string fileName = @"Lims_" + yesterDay.Year + monthStr + dayStr + "_3.txt";
-
-        //static string pathCopy = "Lims_" + yesterDay.Year + monthStr + dayStr + "_3.txt";
-        //static string path = "Lims_" + yesterDay.Year + monthStr + dayStr + "_3.txt";
-
         List<Unit> unitsToWrite;
         List<Unit> unitsWithError;
         string pathFile;
@@ -55,20 +44,16 @@ namespace LimsP.Files
                         fileStream.WriteLine("Lims_" + unit.LimsCode + " error: " + unit.Error);
                     }
                 }
-
             }
         }
         public void WriteToFileResult()
         {
             try
             {
-                //FileStream fileCopy = File.Create(pathCopy);
                 using (StreamWriter fileStream = new StreamWriter(filePath, false, Encoding.Default))
                 {
                     foreach (Unit unit in unitsToWrite)
                     {
-                        
-
                         string strForCopyFile = GetLimsCodeStr(unit.LimsCode) + "," + unit.Formatted_entry + "," + unit.Result?.Sample_Number + " " + unit.Name + " = " +unit.Result?.Formatted_entryStr;
                         fileStream.WriteLine(strForCopyFile);
                     }
@@ -87,12 +72,7 @@ namespace LimsP.Files
         //по требованию в строке код лимс, менее 10, должен быть формата Lims_0
         string GetLimsCodeStr(int limsCode)
         {
-            string codeStr;
-            if (limsCode < 10)
-                codeStr = "Lims_0" + limsCode.ToString();
-            else
-                codeStr = "Lims_" + limsCode.ToString();
-
+            string codeStr = limsCode < 10 ? "Lims_0" + limsCode.ToString() : "Lims_" + limsCode.ToString();
             return codeStr;
         }
 
