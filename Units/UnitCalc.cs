@@ -16,91 +16,79 @@ namespace LimsP.Units
     /// формуа вычисления парсится из файла настроеек Formuls.txt
     /// </summary>
 
-    class UnitCalc : Unit, IUnit
+    class UnitCalc : Unit
     {
-        List<UnitSimple> UnitsSimple { get; set; }
-        string strForParse { get; set; }
         string formulaWithCodes { get; set; }
         string formulaWithValues { get; set; }
 
-        /// <param name="_stop">дата послед.результата</param>
-        /// <param name="_limsprodEntities">ссылка на поделючение к БД</param>
-        /// <param name="_strForParse">строка для парсинга с формулой из файла</param>
-        public UnitCalc(DateTime _stop, limsprodEntities _limsprodEntities, string _strForParse)
+        public UnitCalc(limsprodEntities _limsprodEntities, string parsingStr) : base (_limsprodEntities, parsingStr)
         {
-            stop = _stop;
-            strForParse = _strForParse;
-            limsprodEntities = _limsprodEntities;
+            PasrsingUnitStr();
+            ParsingFormula();
+            ReplaceUnitsToValue();
+            if (!ChkForSkip())
+                CalculateFormula();
+            else
+                Formatted_entry = 0.0001;
 
-            KeyValuePair<int, string> codeWithUnits = SeparateLimsCode(strForParse);
-            LimsCode = codeWithUnits.Key;
-            formulaWithCodes = codeWithUnits.Value;
-            string[] unitsForCalc = SeparateUnits(codeWithUnits.Value);
-            List<KeyValuePair<int, double>> unitsValues = GetUnitsValue(unitsForCalc);
-            Formatted_entry = Math.Round(CalculateFormula(unitsValues), 2);
+            Console.WriteLine("\nCalc LimsCode_" + LimsCode);
+            Console.WriteLine("str parsing - " + formulaWithCodes);
+            Console.WriteLine("str values - " + formulaWithValues + " = " + Formatted_entry.ToString());
+
         }
 
-        //отделяет код от формулы
-        KeyValuePair<int, string> SeparateLimsCode(string strFormula)
-        {
-            string[] str = strFormula.Split('%');
-            int limsCode = 0;
 
-            if (!int.TryParse(str[0], out limsCode))
-            {
-                Error += strFormula + " ошибка лимс-кода в строке формулы";
-            }
-            return new KeyValuePair<int, string>(limsCode, str[1]);
+        public void PasrsingUnitStr()
+        {
+            string[] parameters;
+            parameters = ParsingStr.Split('%');
+            LimsCode = ParsingLimsCode(parameters[0]);
         }
 
-        //выделяет юниты из формулы
-        string[] SeparateUnits(string formula)
+        private void ParsingFormula()
         {
+            string[] parameters;
+            parameters = ParsingStr.Split('%');
+            formulaWithCodes  = parameters[1];
+            formulaWithValues = formulaWithCodes;
+        }
+
+        //выделяет коды юнитов из формулы
+        private void ReplaceUnitsToValue()
+        {
+
             char[] charSplit = { '+', '-', '*', '/', '(', ')' };
-            string[] units = formula.Split(charSplit).Where(x => x.Length != 0 && x.First() != 'v').ToArray();
+            string[] units = formulaWithCodes.Split(charSplit).Where(x => x.Length != 0 && x.First() != 'v').ToArray();  //исключим значения с знаком v  т.к. это значение типа double, а не код лимс
 
-            return units;
+            foreach (string unit in units)    
+            {
+                formulaWithValues = formulaWithValues.Replace(unit, GetResult(unit).ToString());
+            }
+
+            formulaWithValues = formulaWithValues.Replace("v", "");
         }
 
-        //вычисляет результат исследования для каждого юнита
-        List<KeyValuePair<int, double>> GetUnitsValue(string[] unitsCodes)
+        private double GetResult(string limsCodeStr)
         {
-            List<KeyValuePair<int, double>> keyValues = new List<KeyValuePair<int, double>>();
-            this.UnitsSimple = new List<UnitSimple>();
-
-            foreach (string unitCode in unitsCodes)
+            int limsCode;
+            bool chk = int.TryParse(limsCodeStr, out limsCode);
+            if (chk)
             {
-                int code = 0;
-                string unitStr = unitCode;
-                code = Convert.ToInt32(unitStr);
-                UnitSimple unit = Program.UnitsSimple.Where(x => x.LimsCode == code).FirstOrDefault();
-                if (unit != null)
-                {
-                    Result result = new Result(unit, stop, limsprodEntities);
-                    double formatted_entry = result.Formatted_entry;
-                    keyValues.Add(new KeyValuePair<int, double>(code, result.Formatted_entry));
-                    this.UnitsSimple.Add(unit);
-                }
-                else
-                {
-                    Error += unitCode + " результат не получен " + Environment.NewLine;
-                }
+                Unit unit = Program.Units.Where(u => u.LimsCode == limsCode).FirstOrDefault();
+                return unit.Formatted_entry;
             }
-            return keyValues;
+            else
+            {
+                Error = "не удалось преобразовать в лимс код значение " + limsCodeStr;
+                return 0.0001;  //значение прочерк для Галактики, т.е. неопределено
+            }
         }
 
         //вычисление формулы (где вместо кодов - результаты)
-        double CalculateFormula(List<KeyValuePair<int, double>> unitsValue)
+        void CalculateFormula()
         {
-            string stringForCalc = formulaWithCodes.Replace("v", null); //удалим символ v, т.к. это числовое значение формулы, а не рузультат исследования
             double result = 0;
-
-            foreach (KeyValuePair<int, double> unitValue in unitsValue)
-            {
-                stringForCalc = stringForCalc.Replace(unitValue.Key.ToString(), unitValue.Value.ToString());
-                stringForCalc = stringForCalc.Replace("v", null);
-            }
-            Expression expression = new Expression(stringForCalc);
+            Expression expression = new Expression(formulaWithValues);
             try
             {
                 result = expression.calculate();
@@ -110,7 +98,18 @@ namespace LimsP.Units
                 Error += ex.Message;
             }
 
-            return result;
+            Formatted_entry = Math.Round(result, 3);
+
+
         }
+
+        bool ChkForSkip()
+        {
+            if (formulaWithValues.Contains("0.0001"))
+                return true;
+            else
+                return false;
+        }
+
     }
 }

@@ -12,44 +12,59 @@ namespace LimsP.Quiryng
     /// </summary>
     class Result
     {
-        public Nullable<int> Sample_number { get; set; }
+        public Nullable<int> Sample_Number { get; set; }
         public Nullable<System.DateTime> Entered_on { get; set; }
         public double Formatted_entry { get; set; }
-        public string Formatted_entryNoFormat { get; set; }
+        public string Formatted_entryStr { get; set; }
         public string Error { get; set; }
+        protected Unit unit;
+        //protected DateTime stop;
+        protected limsprodEntities limsprod;
 
-        /// <param name="unit">юнит</param>
-        /// <param name="stop">дата последнего результата</param>
-        /// <param name="limsprod">ссылка на подключение к БД</param>
-        public Result(Unit unit, DateTime stop, limsprodEntities limsprod)
+        public Result(Unit _unit, limsprodEntities _limsprodEntities)
+        {
+            unit = _unit;
+            limsprod = _limsprodEntities;
+
+        }
+
+        public bool GetFormattedEntry()
         {
             try
             {
-                var res = limsprod.SAMPLE.Where(s => s.X_PROCESS_UNIT == unit.X_PROCESS_UNIT && s.Product == unit.PRODUCT && s.SAMPLING_POINT == unit.SAMPLING_POINT)
-                    .Join(limsprod.RESULT.Where(s => s.ENTERED_ON < stop && s.NAME == unit.NAME), s => s.SAMPLE_NUMBER, r => r.SAMPLE_NUMBER, (s, r)
-                      => new { SAMPLE_NUMBER = r.SAMPLE_NUMBER, NAME = r.NAME, FORMATTED_ENTRY = r.FORMATTED_ENTRY, ENTERED_ON = r.ENTERED_ON }).
-                      OrderByDescending(o => o.ENTERED_ON).FirstOrDefault();
-
-                if (res != null)
-                {
-                    Sample_number = res.SAMPLE_NUMBER;
-                    Entered_on = res.ENTERED_ON;
-                    Formatted_entryNoFormat = res.FORMATTED_ENTRY;
-
-                    try
-                    {
-                        Formatted_entry = Convert.ToDouble(res.FORMATTED_ENTRY);
-                    }
-                    catch (Exception ex)
-                    {
-                        Error = Formatted_entry + "ошибка при получении результата, преобразования в число Formatted_entry - " + res.FORMATTED_ENTRY;
-                    }
-                }
+                Formatted_entry = Math.Round(Convert.ToDouble(Formatted_entryStr), 3);
+                return true;
             }
             catch (Exception ex)
             {
-                Error = ex.Message;
+                Error = Formatted_entry + "ошибка при получении результата, преобразования в число Formatted_entry - " + Formatted_entryStr;
+                return false;
             }
         }
+
+        public bool ChkFormattedEntry()
+        {
+            if (Formatted_entryStr != null)
+            {
+                Console.WriteLine("Lims_" + unit.LimsCode + ", " + Sample_Number + " = " + Formatted_entry.ToString() + "  " + this.Error);
+                return true;
+            }
+            else
+            {
+                //если в файле данных есть знак @ значит, и нет результата за конкретное время значит получить результат из последнего образца (более раннего)
+                if (unit.ContinueSearch == true)
+                    return false;
+                else
+                {
+                    Formatted_entry = 0.0001; //число для слею обработке в Галатике как знак прочерка
+                    Console.WriteLine("Lims_" + unit.LimsCode + ", " + Sample_Number + " = " + Formatted_entry.ToString() + "  " + this.Error);
+
+                    return true;
+                }
+
+            }
+        }
+
     }
+
 }

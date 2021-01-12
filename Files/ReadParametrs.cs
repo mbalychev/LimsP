@@ -18,35 +18,63 @@ namespace LimsP.Files
         public static List<string> Formuls { get; set; }
 
         //перебор всех юинтов (параметров запроса), для запроса к БД
-        public static List<UnitSimple> ReadParametersFromFile(limsprodEntities limsprodEntities, DateTime stop)
+        public static List<Unit> ReadParametersFromFile(limsprodEntities limsprodEntities, DateTime stop)
         {
-            List<UnitSimple> units = new List<UnitSimple>();
-            string str;
+            List<Unit> units = new List<Unit>();
+            string strFromFile;
+            fileUnitsName = Directory.GetCurrentDirectory() + "\\" + fileUnitsName;
+            Console.WriteLine("Чтение параметров " + fileUnitsName);
             try
             {
-                    using (StreamReader file = new StreamReader(fileUnitsName))
+                using (StreamReader file = new StreamReader(fileUnitsName))
+                {
+                    while ((strFromFile = file.ReadLine()) != null)
                     {
-                        while ((str = file.ReadLine()) != null)
+                        string[] str = strFromFile.Split(';');
+                        switch (str.Length)
                         {
-                            units.Add(new UnitSimple(stop, limsprodEntities, str));
+                            case 5:
+                                units.Add(new UnitPrm5(limsprodEntities, strFromFile));
+                                break;
+                            case 6:
+                                units.Add(new UnitPrm6(limsprodEntities, strFromFile));
+                                break;
+                            case 3:
+                                units.Add(new UnitPrm3(limsprodEntities, strFromFile));
+                                break;
+
+                            default:
+                                break;
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+            }
             return units;
         }
-        public static List<UnitCalc> ReadFormulsFromFile(limsprodEntities limsprodEntities, DateTime stop)
+        public static List<Unit> ReadFormulsFromFile(limsprodEntities limsprodEntities, DateTime stop)
         {
-            List<UnitCalc> units = new List<UnitCalc>();
+            List<Unit> units = new List<Unit>();
             string formula;
-            using (StreamReader line = new StreamReader(fileFormulsName))
+            fileFormulsName = Directory.GetCurrentDirectory() + "\\" + fileFormulsName;
+            try
             {
-                while ((formula = line.ReadLine()) != null)
+                using (StreamReader line = new StreamReader(fileFormulsName))
                 {
-                    units.Add(new UnitCalc (stop, limsprodEntities, formula));
+                    while ((formula = line.ReadLine()) != null)
+                    {
+                        units.Add(new UnitCalc(limsprodEntities, formula));
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
             }
             return units;
         }
